@@ -418,7 +418,7 @@ function HomePage() {
             <p className="english-description">
               Keystone Academy (Beijing Dingshi School) is a bilingual school located in Beijing, China, blending Chinese and Western educational traditions to offer immersive Chinese-English bilingual courses and boarding education. The school upholds the core values of Ren, Yi, Li, Zhi, and Xin and is committed to cultivating future leaders with global perspective and cultural identity.
             </p>
-            <a href="/FoH" className="more-info-link">click here for more information</a>
+            <a href="https://www.keystoneacademy.cn/en/about" className="more-info-link">click here for more information</a>
           </div>
         </div>
       </section>
