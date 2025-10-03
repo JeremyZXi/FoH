@@ -7,6 +7,7 @@ import butterflyLogo from './assets/butterfly-logo.png'
 import abstractGraphic from './assets/abstract-graphic.png'
 import decorativeShapes from './assets/decorative-shapes.svg'
 import FoHPage from './FoHPage'
+import Navbar from "./components/Navbar.jsx";
 
 function HomePage() {
   const wordsContainerRef = useRef(null)
@@ -340,6 +341,9 @@ function HomePage() {
 
 
   return (
+      <div>
+        <Navbar/>
+
     <div className="app">
       {/* Hero Section - Festival of Hope 2026 */}
       <section className="hero-section">
@@ -423,6 +427,7 @@ function HomePage() {
         </div>
       </section>
     </div>
+      </div>
   )
 }
 

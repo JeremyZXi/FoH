@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* Global CSS Reset */
 * {
   margin: 0;
@@ -15,7 +18,7 @@ html {
 /* Custom Font - Kerox */
 @font-face {
   font-family: 'Kerox';
-  src: url('./assets/Kerox-NonCommercial.otf') format('opentype');
+  src: url('assets/Kerox-NonCommercial.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,7 +27,7 @@ html {
 /* Custom Font - Source Han Serif (思源宋体) */
 @font-face {
   font-family: 'Source Han Serif';
-  src: url('./assets/SourceHanSerifCN-Regular.otf') format('opentype');
+  src: url('assets/SourceHanSerifCN-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -68,6 +71,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 60px; /* Account for fixed navbar */
 }
 
 html {
@@ -92,7 +96,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ffffff;
 }
 button:focus,
 button:focus-visible {
@@ -105,9 +109,165 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #ffffff;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000000;
+  color: #e0e0e0;
+  font-family: 'Kerox', Arial, 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Desktop Navigation */
+.navbar-desktop {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbar-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffffff;
+}
+
+/* Mobile Navigation */
+.navbar-mobile {
+  display: none;
+}
+
+.navbar-mobile-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  gap: 20px;
+}
+
+.navbar-brand-mobile {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-brand-mobile:hover {
+  color: #ffffff;
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  opacity: 0.8;
+}
+
+.navbar-mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: #000000;
+  border-top: 1px solid #333333;
+  border-left: 1px solid #333333;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-mobile-link {
+  display: block;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 20px;
+  text-align: right;
+  border-bottom: 1px solid #333333;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-mobile-link:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.navbar-mobile-link:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-desktop {
+    display: none;
+  }
+  
+  .navbar-mobile {
+    display: block;
+  }
+  
+  .navbar-container {
+    padding: 0 16px;
+  }
+  
+  .navbar-brand-mobile {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand-mobile {
+    font-size: 12px;
+  }
+  
+  .navbar-mobile-link {
+    padding: 16px;
+    font-size: 14px;
   }
 }

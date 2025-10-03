@@ -1,8 +1,11 @@
 import './FoHPage.css'
 import decorativeShapes from './assets/decorative-shapes.svg'
+import Navbar from "./components/Navbar.jsx";
 
 function FoHPage() {
   return (
+      <div>
+      <Navbar/>
     <div className="foh-page">
       <div className="foh-background">
         <img src={decorativeShapes} alt="Decorative Shapes" className="foh-graphic" />
@@ -19,6 +22,7 @@ function FoHPage() {
         </div>
       </div>
     </div>
+      </div>
   )
 }
 
